@@ -9,12 +9,12 @@
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{asset('assets/vendors/feather/feather.css')}}">
   <link rel="stylesheet" href="{{asset('assets/vendors/ti-icons/css/themify-icons.css')}}">
-  <link rel="stylesheet" href="{{asset('asset/vendors/css/vendor.bundle.base.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="{{asset('vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
   <link rel="stylesheet" href="{{asset('assets/vendors/ti-icons/css/themify-icons.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('js/select.dataTables.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/js/select.dataTables.min.css')}}">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="{{asset('assets/css/vertical-layout-light/style.css')}}">
@@ -73,6 +73,10 @@
   <!-- Custom js for this page-->
   <script src="{{asset('assets/js/dashboard.js') }}"></script>
   <script src="{{asset('assets/js/Chart.roundedBarCharts.js')}}"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+  integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- End custom js for this page-->
 
   {{-- Toaster --}}
@@ -88,6 +92,9 @@
           @endif
       });
   </script>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
   @yield('js')
 
 
