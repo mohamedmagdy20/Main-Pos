@@ -26,6 +26,8 @@ class LineRequest extends FormRequest
         return [
             //
             'title'=>'required',
+            'price'=>'nullable',
+
             'note'=>'nullable'
         ];
     }

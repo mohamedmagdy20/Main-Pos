@@ -10,6 +10,5 @@ class Fabrics extends Model
  
     use HasFactory;
     protected $table = 'fabrics';
-    protected $fillable = ['name','notes'];
-
+        protected $fillable = ['name','price','notes'];
 }

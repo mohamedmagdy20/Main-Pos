@@ -17,6 +17,14 @@
                                 <input type="text" name="name" class="form-control" id="title" >
                             </div>
                         </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="code">Price</label>
+                                <input type="number" name="price" value="{{old('price',$data->price)}}" class="form-control" id="price" >
+                            </div>
+                        </div>
+                        
                         
                        
                        <div class="col-md-12">

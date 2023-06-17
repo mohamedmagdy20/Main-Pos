@@ -20,6 +20,7 @@
                         <thead>
                             <tr>
                                 <th>Title</th>
+                                <th>Price</th>
                                 <th>note</th>
                                 <th>actions</th>
                            
@@ -60,6 +61,11 @@
                     {
                 data: 'name'
             },
+
+            {
+                data: 'price'
+            },
+
 
             {
                 data: 'notes'

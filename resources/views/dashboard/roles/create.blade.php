@@ -3,34 +3,26 @@
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Edit Fibrics</h4>
+                <h4 class="card-title">Add Role</h4>
                 <p class="card-description">
-                    Edit Fibrics
+                    Add Role
                 </p>
-                <form class="forms-sample" action="{{ route('fabrics.update',$data->id) }}" method="POST"
+                <form class="forms-sample" action="{{ route('role.store') }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="code">Title</label>
-                                <input type="text" name="name" value="{{old('name',$data->name)}}" class="form-control" id="title" >
+                                <label for="code">Name</label>
+                                <input type="text" name="display_name" class="form-control" id="title" >
                             </div>
                         </div>
 
-                        
-                        <div class="col-md-12">
-                            <div class="form-group">
-                            <label for="code">Price</label>
-                                <input type="number" name="price" value="{{old('price',$data->price)}}" class="form-control" id="price" >
-                            </div>
-                        </div>
-                        
                        
                        <div class="col-md-12">
                         <div class="form-group">
                             <label for="size">Notes</label>
-                            <textarea name="notes" class="form-control" id="" cols="30" rows="10">{{old('note',$data->note)}}</textarea>
+                            <textarea name="description" class="form-control" id="" cols="30" rows="10"></textarea>
                         </div>
                        </div>
         

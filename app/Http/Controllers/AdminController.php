@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Admin\StoreAdmin;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -22,7 +23,8 @@ class AdminController extends Controller
 
     public function create()
     {
-        return view($this->view.'create');
+        $data=  Role::all();
+        return view($this->view.'create',['data'=>$data]);
     }
 
     public function edit($id)
@@ -39,7 +41,10 @@ class AdminController extends Controller
         $data = $request->validated();
         
         $data['password'] = Hash::make($data['password']);
-        if(User::create($data))
+        $user =  User::create($data);
+        $user->syncRoles($data['role']);
+
+        if($user)
         {
             return redirect()->back()->with('success','Success');
         }
@@ -67,7 +72,11 @@ class AdminController extends Controller
         $data = User::query();
         return DataTables::of($data)->addColumn('actions',function($data){
             return view('dashboard.admins.actions',['type'=>'actions','data'=>$data]);
-        })->make(true);
+        })
+        ->addColumn('role',function($data){
+            return view('dashboard.admins.actions',['type'=>'role','data'=>$data]);
+        })
+        ->make(true);
     }
 
     //

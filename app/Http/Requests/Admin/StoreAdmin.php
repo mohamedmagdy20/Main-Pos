@@ -28,7 +28,9 @@ class StoreAdmin extends FormRequest
             'name'=>'required',
             'email'=>'required|email',
             'password'=>'required|confirmed|min:5',
+            'role'=>'array'
         ];
+
     }
 
     public function messages()

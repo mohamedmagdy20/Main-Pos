@@ -11,6 +11,7 @@ class Line extends Model
 
     protected $fillable = [
         'title',
-        'note'
+        'note',
+        'price'
     ];
 }

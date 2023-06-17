@@ -26,6 +26,7 @@ class fibersRequest extends FormRequest
         return [
             //
             'name'=>'required',
+            'price'=>'nullable',
             'notes'=>'nullable'
         ];
     }

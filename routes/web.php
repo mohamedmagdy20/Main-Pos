@@ -5,6 +5,7 @@ use App\Http\Controllers\FabricsController;
 use App\Http\Controllers\GumController;
 use App\Http\Controllers\LineController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,6 +64,16 @@ Route::middleware('auth')->group(function () {
         Route::post('store','store')->name('line.store');
         Route::post('update/{id}','update')->name('line.update');
         Route::get('delete','delete')->name('line.delete');
+    });
+
+
+    
+    Route::group(['prefix'=>'roles','controller'=>RoleController::class],function(){
+        Route::get('/','index')->name('role.index');
+        Route::get('create','create')->name('role.create');
+        Route::get('data','data')->name('role.data');
+        Route::post('store','store')->name('role.store');
+
     });
 
     // Type Of Fabrics  => انواع الاقمشه 

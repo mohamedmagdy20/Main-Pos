@@ -6,24 +6,22 @@
         <div class="card">
             <div class="card-body">
                 <div class="content m-2 text-center">
-                    <a class="btn btn-primary" href="{{ route('line.create') }}">Add Lines <i
+                    <a class="btn btn-primary" href="{{ route('role.create') }}">Add Role <i
                             class="fa fa-plus"></i></a>
                 </div>
 
-                <h4 class="card-title">Lines</h4>
+                <h4 class="card-title">Roles</h4>
                 <p class="card-description">
-                    Show Lines
+                    Show Roles
                 </p>
 
                 <div class="table-responsive">
                     <table class="table table-striped" id="User-Table">
                         <thead>
                             <tr>
-                                <th>Title</th>
-                                <th>Price</th>
+                                <th>Name</th>
                                 <th>note</th>
-                                <th>actions</th>
-                           
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -39,7 +37,7 @@
         let UsersTable = null
 
         function setUserDatatable() {
-            var url = "{{ route('line.data') }}";
+            var url = "{{ route('role.data') }}";
 
             UsersTable = $("#User-Table").DataTable({
                 processing: true,
@@ -58,20 +56,12 @@
                     },
                 },
                 columns: [
-                    {
-                data: 'title'
-            },
-
-            {
-                data: 'price'
-            },
-
-            {
-                data: 'note'
-            },
-            {
-                data: 'actions'
-            },
+                {
+                    data: 'display_name'
+                },
+                {
+                    data: 'description'
+                },
             ],
 
 
