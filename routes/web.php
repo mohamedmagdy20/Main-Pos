@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FabricsController;
 use App\Http\Controllers\GumController;
 use App\Http\Controllers\LineController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
@@ -87,6 +88,13 @@ Route::middleware('auth')->group(function () {
         Route::post('update/{id}','update')->name('fabrics.update');
         Route::get('delete','delete')->name('fabrics.delete');
     });
+
+    
+    Route::group(['prefix'=>'products','controller'=>ProductController::class],function(){
+        Route::get('create','create')->name('products.create');
+       
+    });
+
 
 
 });

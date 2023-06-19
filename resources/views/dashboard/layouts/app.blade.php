@@ -21,6 +21,19 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
 
+  <style>
+    #img-preview {
+      display: none; 
+      width: 155px;   
+      border: 2px dashed #333;  
+      margin-bottom: 20px;
+    }
+    #img-preview img {  
+      width: 100%;
+      height: auto; 
+      display: block;   
+    }
+  </style>
   {{-- Toaster --}}
   <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/css/toastr.css" rel="stylesheet" />
 
@@ -92,6 +105,27 @@
           @endif
       });
   </script>
+
+
+<script>
+  const chooseFile = document.getElementById("choose-file");
+  const imgPreview = document.getElementById("img-preview");
+  chooseFile.addEventListener("change", function () {
+    getImgData();
+  });
+
+  function getImgData() {
+    const files = chooseFile.files[0];
+    if (files) {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(files);
+      fileReader.addEventListener("load", function () {
+        imgPreview.style.display = "block";
+        imgPreview.innerHTML = '<img src="' + this.result + '" />';
+      });    
+    }
+  }
+</script>
   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 

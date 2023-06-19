@@ -74,7 +74,7 @@ class AdminController extends Controller
             return view('dashboard.admins.actions',['type'=>'actions','data'=>$data]);
         })
         ->addColumn('role',function($data){
-            return view('dashboard.admins.actions',['type'=>'role','data'=>$data]);
+            return 'موظف';
         })
         ->make(true);
     }

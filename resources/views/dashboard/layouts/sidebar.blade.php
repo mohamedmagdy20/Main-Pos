@@ -28,6 +28,7 @@
         </a>
         <div class="collapse" id="art">
           <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{route('products.create')}}">Products</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{route('gum.index')}}">Gums</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{route('line.index')}}">Lines</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{route('fabrics.index')}}">Fibrics</a></li>
